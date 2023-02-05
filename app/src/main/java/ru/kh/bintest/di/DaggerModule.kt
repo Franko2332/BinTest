@@ -47,11 +47,16 @@ class DaggerModule(private val context: Context) {
 
     @Provides
     @Singleton
-    fun getRequestedBinDao(): RequestedBinDao =
+    fun getAppDatabase(): AppDatabase =
         Room.databaseBuilder(context, AppDatabase::class.java, dataBaseName)
             .allowMainThreadQueries()
             .build()
-            .requestedBinDao()
+
+
+    @Provides
+    @Singleton
+    fun getRequestedBinDao(database: AppDatabase): RequestedBinDao = database.requestedBinDao()
+
 
     @Provides
     @Singleton

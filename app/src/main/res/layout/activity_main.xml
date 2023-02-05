@@ -10,5 +10,12 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        app:menu="@menu/navigation_menu_items"
+        android:layout_height="56dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,9 @@ class RoomRepoImpl @Inject constructor(private val requestedBinDao: RequestedBin
 
     override fun delete(entity: RequestedBinEntity): Completable = requestedBinDao.delete(entity)
 
+    override fun deleteAll(): Completable = requestedBinDao.deleteAll()
+
+
     override fun getAll(): Single<List<RequestedBinEntity>> = requestedBinDao.getAll()
 
 }

@@ -6,6 +6,9 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/bin_fragment.xml" value="0.335" />
         <entry key="app/src/main/res/layout/bin_history_fragment.xml" value="0.1765625" />
+        <entry key="app/src/main/res/layout/bin_history_item.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/request_bin_history_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/navigation_menu_items.xml" value="0.12407407407407407" />
       </map>
     </option>
   </component>

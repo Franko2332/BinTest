@@ -13,6 +13,9 @@ interface RequestedBinDao {
     @Query("SELECT * FROM "+RequestedBinEntity.TABLE_NAME)
     fun getAll(): Single<List<RequestedBinEntity>>
 
+    @Query("DELETE FROM "+RequestedBinEntity.TABLE_NAME)
+    fun deleteAll(): Completable
+
     @Insert
     fun insert(entity: RequestedBinEntity): Completable
 

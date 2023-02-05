@@ -12,4 +12,8 @@
     <string name="type">TYPE</string>
     <string name="country">COUNTRY</string>
     <string name="bank">BANK</string>
+    <string name="bin">BIN:</string>
+    <string name="date">DATE:</string>
+    <string name="search">Search</string>
+    <string name="history">History</string>
 </resources>

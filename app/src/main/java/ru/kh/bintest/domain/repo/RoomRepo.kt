@@ -7,5 +7,6 @@ import ru.kh.bintest.domain.dbentity.RequestedBinEntity
 interface RoomRepo {
     fun add(entity: RequestedBinEntity): Completable
     fun delete(entity: RequestedBinEntity): Completable
+    fun deleteAll(): Completable
     fun getAll(): Single<List<RequestedBinEntity>>
 }
