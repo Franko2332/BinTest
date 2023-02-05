@@ -5,10 +5,7 @@ import androidx.lifecycle.*
 import androidx.savedstate.SavedStateRegistryOwner
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import ru.kh.bintest.domain.appstate.BinHistoryAppState
-import ru.kh.bintest.domain.appstate.BinInfoAppState
-import ru.kh.bintest.domain.repo.Repo
 import ru.kh.bintest.domain.repo.RoomRepo
-import ru.kh.bintest.ui.bininfosearch.BinInfoViewModel
 
 class BinsHistoryViewModel(private val repo: RoomRepo) : ViewModel() {
     private val liveData = MutableLiveData<BinHistoryAppState>()

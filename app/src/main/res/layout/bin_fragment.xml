@@ -20,7 +20,7 @@
         app:startIconDrawable="@drawable/ic_baseline_search_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:onTextChanged="@{viewModel::onTextChanged}"
+            android:onTextChanged="@{viewModel.onTextChanged}"
             android:inputType="number"
             android:id="@+id/edit_text_find_by_card_number"
             android:layout_width="match_parent"
@@ -266,6 +266,7 @@
                             app:layout_constraintTop_toBottomOf="@id/tv_country_label" />
 
                         <LinearLayout
+                            android:id="@+id/coordinates_linear_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="4dp"
