@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">BinTest</string>
+    <string name="find_by_bin">Enter the first digits of a card number (BIN/IIN)</string>
+    <string name="scheme_network">SCHEME / NETWORK</string>
+    <string name="brand">BRAND</string>
+    <string name="length">LENGTH</string>
+    <string name="luhn">LUHN</string>
+    <string name="prepaide">PREPAIDE</string>
+    <string name="latitude">latitude:</string>
+    <string name="longitude">longitude:</string>
+    <string name="card_number">CARD NUMBER</string>
+    <string name="type">TYPE</string>
+    <string name="country">COUNTRY</string>
+    <string name="bank">BANK</string>
 </resources>
