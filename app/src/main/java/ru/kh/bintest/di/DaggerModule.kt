@@ -23,6 +23,7 @@ class DaggerModule(private val context: Context) {
     private val baseUrl = "https://lookup.binlist.net"
     private val dataBaseName = "requested_bins"
 
+
     @Provides
     @Singleton
     fun getRetrofit(): Retrofit = Retrofit.Builder().baseUrl(baseUrl)
