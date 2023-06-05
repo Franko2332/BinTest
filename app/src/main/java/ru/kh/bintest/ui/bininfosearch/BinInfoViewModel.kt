@@ -18,8 +18,9 @@ class BinInfoViewModel(private val repo: Repo, private val roomRepo: RoomRepo) :
     val _binInfoAppStateLiveData: LiveData<BinInfoAppState> get() = binInfoAppStateLiveData
     private var editTextStr = ""
 
+
     fun getData(binNumber: String) {
-        if (editTextStr.length < 6) binInfoAppStateLiveData.postValue(BinInfoAppState.BinLenghtInvalid)
+        if (editTextStr.length < BIN_MIN_LENGTH) binInfoAppStateLiveData.postValue(BinInfoAppState.BinLenghtInvalid)
         else {
             binInfoAppStateLiveData.postValue(BinInfoAppState.Loading)
             roomRepo.add(getRequestedBinEntity(binNumber)).subscribeBy(
@@ -52,21 +53,27 @@ class BinInfoViewModel(private val repo: Repo, private val roomRepo: RoomRepo) :
     }
 
     companion object {
-        fun provideFactory(
-            repo: Repo, roomRepo: RoomRepo, owner: SavedStateRegistryOwner,
-            defaultArgs: Bundle? = null
-        ): AbstractSavedStateViewModelFactory =
-            object : AbstractSavedStateViewModelFactory(owner, defaultArgs) {
-                @Suppress("UNCHECKED_CAST")
-                override fun <T : ViewModel?> create(
-                    key: String,
-                    modelClass: Class<T>,
-                    handle: SavedStateHandle
-                ): T {
-                    return BinInfoViewModel(repo, roomRepo) as T
-                }
-            }
+        private const val BIN_MIN_LENGTH = 6
+
+
     }
+}
+
+object BinInfoViewModelFactory {
+    fun provideFactory(
+        repo: Repo, roomRepo: RoomRepo, owner: SavedStateRegistryOwner,
+        defaultArgs: Bundle? = null
+    ): AbstractSavedStateViewModelFactory =
+        object : AbstractSavedStateViewModelFactory(owner, defaultArgs) {
+            @Suppress("UNCHECKED_CAST")
+            override fun <T : ViewModel?> create(
+                key: String,
+                modelClass: Class<T>,
+                handle: SavedStateHandle
+            ): T {
+                return BinInfoViewModel(repo, roomRepo) as T
+            }
+        }
 }
 
 
